@@ -1,8 +1,10 @@
 from flask import render_template
 from app import app
 
+
 @app.route('/')
 @app.route('/index')
+@app.route('/translate')
 def index():
 	user = {'username': 'Andrew'}
 
@@ -22,6 +24,10 @@ def index():
 # ]
 	return render_template('index.html', title='Home', user=user)
 
+
+def translate():
+	user = {'username': 'Andrew'}
+	return render_template('translate.html', title='Translate', user=user)
 
 # from flask import render_template, flash, redirect, url_for
 
