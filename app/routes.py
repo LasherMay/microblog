@@ -4,30 +4,25 @@ from app import app
 
 @app.route('/')
 @app.route('/index')
-@app.route('/translate')
 def index():
 	user = {'username': 'Andrew'}
 
-# 	posts = [
-# 	{
-# 		'author': {'username': 'John'},
-# 		'body': 'Beautiful day in Moscow!'
-# 	},
-# 	{
-# 		'author': {'username': 'Susan'},
-# 		'body': 'The Avengers movie pssed me off'
-# 	},
-#         {
-#                 'author': {'username': 'Troll'},
-#                 'body': 'The Avengers movie is the best'
-#         }
-# ]
-	return render_template('index.html', title='Home', user=user)
+	posts = [
+	{
+		'author': {'username': 'John'},
+		'body': 'Beautiful day in Moscow!'
+	},
+	{
+		'author': {'username': 'Susan'},
+		'body': 'The Avengers movie pssed me off'
+	},
+	{
+			'author': {'username': 'Troll'},
+			'body': 'The Avengers movie is the best'
+	}
+]
+	return render_template('index.html', title='Home', user=user, post=posts)
 
-
-def translate():
-	user = {'username': 'Andrew'}
-	return render_template('translate.html', title='Translate', user=user)
 
 # from flask import render_template, flash, redirect, url_for
 
